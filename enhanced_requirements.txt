@@ -1,0 +1,22 @@
+# Core CV Generation
+# (no external dependencies)
+
+# PDF Generation
+weasyprint>=60.0
+markdown2>=2.4.10
+
+# Skills Visualization
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# Publication Metrics
+scholarly>=1.7.11
+requests>=2.31.0
+
+# Optional: For advanced PDF styling
+# reportlab>=4.0.0
+
+# Development tools (optional)
+# pylint>=3.0.0
+# black>=23.0.0
+# pytest>=7.4.0

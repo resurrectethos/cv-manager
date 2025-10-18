@@ -1,0 +1,265 @@
+{
+  "personal_info": {
+    "name": "Pregalathan Reddy",
+    "title": "eLearning Systems Coordinator",
+    "phone": "+27 81 467 8158",
+    "email": "preggy@preggyreddy.co.za",
+    "websites": [
+      "https://www.linkedin.com/in/pregalathan-reddy-11360a26/",
+      "https://preggyreddy.co.za",
+      "https://orcid.org/0000-0002-7350-1987"
+    ],
+    "location": "Johannesburg, Gauteng, ZA"
+  },
+  "profile": {
+    "summary": "Dr. Pregalathan Reddy is a distinguished Digital Education Researcher and Strategist with a PhD in Information Technology and over 15 years of experience leading Technology-Enhanced Learning (TEL) initiatives in higher education.",
+    "expertise": [
+      "Pedagogical innovation and digital infrastructure",
+      "ODeL environments",
+      "Human-AI collaboration in scholarship (The Centaur Scholar model)",
+      "Empirical analysis of LMS user adoption",
+      "Translating complex technical challenges into strategic, research-informed solutions"
+    ]
+  },
+  "education": [
+    {
+      "institution": "Durban University of Technology",
+      "degree": "PhD: Information Technology",
+      "period": "2016 - 2023",
+      "description": "The development of a computerised simulation model to guide the South African higher education sector in short and long-term planning of TEL infrastructure",
+      "distinction": false
+    },
+    {
+      "institution": "Manipal University",
+      "degree": "Faculty Certificate in Online Learning",
+      "period": "Feb 2015 – April 2015",
+      "description": "Six-week online course focused on all pedagogical aspects of online teaching",
+      "distinction": false
+    },
+    {
+      "institution": "Durban University of Technology",
+      "degree": "MTech: Language Practice",
+      "period": "2009 – 2014",
+      "description": "Development of a Language Learning Object Repository (LLOR) for second language teachers of English in Computer-Assisted Language Learning",
+      "distinction": "cum laude"
+    },
+    {
+      "institution": "University of KwaZulu-Natal",
+      "degree": "Web-Based Learning & Teaching Practice",
+      "period": "2007",
+      "description": "Part of the NDP Education (Postgraduate)",
+      "distinction": false
+    },
+    {
+      "institution": "Durban Institute of Technology",
+      "degree": "BTech: Library & Information Studies",
+      "period": "1999 - 2002",
+      "description": "Graduated with a distinction in Information Retrieval 4",
+      "distinction": true
+    }
+  ],
+  "work_experience": [
+    {
+      "company": "Durban University of Technology",
+      "position": "eLearning Coordinator",
+      "period": "2022-2025",
+      "responsibilities": [
+        "Led a multidisciplinary team of academics and technicians to deliver strategic support and training for the Moodle LMS, serving a user base of over 35,000",
+        "Designed and executed institutional training programs on the pedagogical and ethical use of generative AI, directly informing current research on faculty development in ODeL contexts",
+        "Conducted empirical analysis of Moodle usage data to identify adoption trends and inform evidence-based system enhancements"
+      ]
+    },
+    {
+      "company": "Durban University of Technology",
+      "position": "eLearning Systems Coordinator",
+      "period": "2006-2021",
+      "responsibilities": [
+        "Directed the technical management and strategic optimisation of the Moodle LMS, ensuring stability, security, and scalability for 35,000 users",
+        "Conducted ongoing national and international benchmarking of TEL infrastructure and practices to inform institutional strategy, directly contributing to PhD research",
+        "Led the research, testing, and integration of new educational technology plugins and tools, aligning technical capabilities with evolving pedagogical needs"
+      ]
+    },
+    {
+      "company": "Kaytech Engineered Fabrics",
+      "position": "Information Officer",
+      "period": "2003-2006",
+      "responsibilities": [
+        "Responsible for all aspects of development and maintenance of the online library system",
+        "Acquisition, cataloguing, indexing, classification, labelling, filing and lending",
+        "Selective dissemination of information",
+        "Performed scanning and cataloguing of new prints",
+        "Set up a web-based image database for printed photo library and a CMS for the intranet using Plone"
+      ]
+    },
+    {
+      "company": "Technikon Natal",
+      "position": "Web-Based Learning Lecturer",
+      "period": "2001-2003",
+      "responsibilities": [
+        "Responsible for the training of academics in the use of the (WebCT) learning management system",
+        "Development of online classroom content, including web design from beginner to advanced levels"
+      ]
+    }
+  ],
+  "skills": {
+    "research": [
+      "Critical Realism",
+      "Case Study Analysis",
+      "Simulation Modeling",
+      "Qualitative & Quantitative Data Analysis"
+    ],
+    "technical": [
+      "Moodle LMS Administration & Architecture",
+      "Cloud Platforms (Azure)",
+      "Database Management (SQL, MySQL)",
+      "Web Technologies (HTML, CSS, PHP)",
+      "Network & Server Administration (Linux/Windows)"
+    ],
+    "pedagogical": [
+      "AI in Education (The Centaur Scholar Model)",
+      "Online Course Design & Evaluation",
+      "ODeL Strategy",
+      "Digital Learning Pathways",
+      "Faculty Development & Training"
+    ]
+  },
+  "certifications": [
+    {
+      "name": "Fundamentals of Deep Learning",
+      "issuer": "NVIDIA Deep Learning Institute",
+      "year": 2022
+    },
+    {
+      "name": "Applied Data Science: An Introduction MOOC",
+      "issuer": "Syracuse University",
+      "year": 2014
+    },
+    {
+      "name": "Perspectives on Data Analytics with Advances in Software Engineering",
+      "issuer": "AICTE",
+      "year": 2020,
+      "location": "Mumbai, India"
+    }
+  ],
+  "memberships": [
+    {
+      "organization": "Internet Society",
+      "member_id": "2247271",
+      "sigs": [
+        "Affordable Internet Access",
+        "Artificial Intelligence",
+        "Internet for Education"
+      ],
+      "chapters": ["Interplanetary", "South African"]
+    },
+    {
+      "organization": "Solar – Society for Learning Analytics",
+      "member_id": null,
+      "sigs": [],
+      "chapters": []
+    }
+  ],
+  "hobbies": ["Running", "Swimming", "Reading"],
+  "publications": {
+    "book_chapters": [
+      {
+        "authors": ["Pratt, D. D.", "Reddy, P."],
+        "year": "in press",
+        "title": "Conceptualising the teaching/learning process to ensure resilience in higher education",
+        "editors": ["S. Graham", "C. Meintjies"],
+        "book": "Resilience in higher education: the South African experience",
+        "publisher": "UJ Press"
+      }
+    ],
+    "conference_proceedings": [
+      {
+        "authors": ["Pratt, D.D.", "Reddy, P."],
+        "year": 2025,
+        "title": "Digital-human collaboration in higher degree course evaluation",
+        "conference": "32nd International Conference on Learning: Human Learning and Machine Learning - Challenges and Opportunities for Artificial Intelligence in Education",
+        "location": "Granada",
+        "dates": "8-10 July 2025"
+      },
+      {
+        "authors": ["Reddy, P.", "Pratt, D. D."],
+        "year": 2025,
+        "title": "Copilot-assisted online course design evaluator",
+        "editor": "T. Bastiaens",
+        "proceedings": "Proceedings of EdMedia + Innovate Learning",
+        "pages": "395-405",
+        "publisher": "Association for the Advancement of Computing in Education (AACE)"
+      },
+      {
+        "authors": ["Reddy, P.", "Pratt, D."],
+        "year": 2024,
+        "title": "A systemic model for evaluating online course design: a critical realist approach",
+        "proceedings": "INTED Proceedings",
+        "publisher": "IATED",
+        "doi": "10.21125/inted.2024.1818",
+        "conference": "18th International Technology, Education and Development Conference",
+        "location": "Valencia, Spain",
+        "dates": "4-6 March, 2024",
+        "pages": "6892-6901"
+      },
+      {
+        "authors": ["Reddy, P.", "Pratt, D."],
+        "year": 2022,
+        "title": "Case study of migration from local in-house data centre at the Durban University of Technology to Azure Cloud",
+        "proceedings": "2022 Conference on Information Communications Technology and Society, ICTAS 2022 - Proceedings",
+        "doi": "10.1109/ICTAS53252.2022.9744660"
+      },
+      {
+        "authors": ["Reddy, P."],
+        "year": 2019,
+        "title": "A computerized simulation model to forecast higher education TEL infrastructure: arriving at the simulation development process",
+        "proceedings": "2019 Proceedings of 13th International Technology, Education and Development Conference",
+        "location": "Valencia, Spain",
+        "dates": "11-13 March 2019",
+        "pages": "1297-1301"
+      },
+      {
+        "authors": ["Reddy, P."],
+        "year": 2019,
+        "title": "Computerized simulation model for TEL infrastructure",
+        "proceedings": "Proceedings of the 10th International Conference on Intelligent Systems and Communication Networks (IC-ISCN 2019)",
+        "location": "Mumbai, India",
+        "dates": "22-23 February 2019"
+      },
+      {
+        "authors": ["Reddy, P."],
+        "year": 2014,
+        "title": "A learning object repository for computer assisted language learning in order to provide resources for language learners in schools in KwaZulu-Natal",
+        "institution": "Durban University of Technology"
+      },
+      {
+        "authors": ["Reddy, P."],
+        "year": 2012,
+        "title": "The development of a language learning object repository (LLOR) for second language teachers in KwaZulu-Natal, South Africa",
+        "proceedings": "Proceedings of 5th International Conference of Education Research and Innovation (ICERI 2012)",
+        "location": "Madrid, Spain",
+        "dates": "19-21 November 2012",
+        "pages": "5454-5462"
+      }
+    ]
+  },
+  "referees": [
+    {
+      "name": "Mr Soren Aalto",
+      "position": "Amazon Web Services – EC2: Senior Software Development Engineer",
+      "phone": "+27 83 262 1869",
+      "email": "sorena.aalto@gmail.com"
+    },
+    {
+      "name": "Prof D.D Pratt",
+      "position": "Durban University of Technology: Senior Researcher",
+      "phone": "+27 82 422 9570",
+      "email": "deep@dut.ac.za"
+    },
+    {
+      "name": "Prof Graham Stewart",
+      "position": "Durban University of University – retired (Formerly Deputy Dean: FAD, E-learning Project Manager)",
+      "phone": "+44 7563841929",
+      "email": "stewartg34@gmail.com"
+    }
+  ]
+}
