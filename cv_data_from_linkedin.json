@@ -1,0 +1,131 @@
+{
+  "personal_info": {
+    "name": "Pregalathan Reddy, PhD",
+    "title": "AI Strategist for Education & Skills Development | Founder at EdufusionAI",
+    "location": "Durban, KwaZulu-Natal, South Africa",
+    "email": "preggyr@outlook.com",
+    "websites": {
+      "linkedin": "www.linkedin.com/in/pregalathan-ready-phd-11360a26",
+      "personal": "preggyreddy.co.za/",
+      "company": "edufusional.co.za"
+    }
+  },
+  "summary": "I am a multidisciplinary e-Learning professional with over two decades of experience at the intersection of education, technology, and innovation. My expertise spans academic development, LMS administration (Blackboard, Moodle), and strategic digital transformation in higher education. With a PhD in Information Technology (2023) and a Master's in Language Practice (cum laude, 2014), I bring a unique blend of pedagogical insight and technical proficiency. My doctoral research focused on developing a computerized simulation model to guide strategic planning for technology-enhanced learning (TEL) infrastructure in South African universities. As an AI Strategist and 4IR Advocate, I actively explore the integration of artificial intelligence in education—from intelligent course design to data-driven decision-making. I've led institutional LMS migrations, facilitated national training programmes, and contributed to global conversations on digital education. My research contributions include work on simulation modeling for TEL infrastructure, cloud migration in higher education, and most recently, the development of a Copilot-Assisted Online Course Design Evaluator—a tool that bridges AI and pedagogy to support quality assurance in digital learning environments. I am passionate about shaping the future of education through research, innovation, and inclusive digital strategies.",
+  "skills": {
+    "top_skills": [
+      "Artificial Intelligence (AI)",
+      "Go-to-Market Strategy",
+      "Entrepreneurship"
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiency": "Full Professional"
+      },
+      {
+        "language": "Italian",
+        "proficiency": "Elementary"
+      },
+      {
+        "language": "Spanish",
+        "proficiency": "Limited Working"
+      },
+      {
+        "language": "Afrikaans",
+        "proficiency": "Limited Working"
+      }
+    ],
+    "certifications": [
+      "Internet Security",
+      "Proposal Reviewer 2024",
+      "FCOT - Faculty Certificate in Online Teaching",
+      "Fundamentals of Deep Learning",
+      "How to Design and Deploy a Simple LAN and Wi-Fi Network"
+    ]
+  },
+  "publications": [
+    "Computerized simulation model for TEL infrastructure",
+    "A learning object repository for computer assisted language learning in order to provide resources for language learners in schools in KwaZulu-Natal",
+    "Copilot-Assisted Online Course Design Evaluator",
+    "From the outside looking in",
+    "The development of a language learning object repository (LLOR) for second language teachers in KwaZulu-Natal, South Africa"
+  ],
+  "experience": [
+    {
+      "company": "EdufusionAI",
+      "position": "Founder & CEO",
+      "location": "Durban, KwaZulu-Natal, South Africa",
+      "period": "May 2025 - Present (6 months)",
+      "description": "Building an AI-powered market intelligence and compliance engine to bridge South Africa's critical skills gap. EdufusionAI's platform helps Skills Development Providers get accredited faster by identifying high-demand qualification niches and automating complex QCTO compliance. Our vision is to create a more dynamic, data-driven, and effective skills economy."
+    },
+    {
+      "company": "Durban University of Technology",
+      "positions": [
+        {
+          "title": "ELearning Systems Coordinator",
+          "period": "January 2020 - Present (5 years 10 months)",
+          "location": "Durban Area, South Africa",
+          "description": "I have been ensuring that a LMS is available for our 35k users using different infrastructure such as in-house hosting on Windows Server and also on Azure Cloud. I also ensure that we provide help desk support services as well as provide various reports about the performance of the LMS as well as how it is used by lecturers and students. I do all the system updates and maintenance including the Linux OS and the database, as well as storage assessment and upgrading and backups."
+        },
+        {
+          "title": "eLearning Systems Administrator",
+          "period": "August 2008 - Present (17 years 3 months)",
+          "location": "Durban Area, South Africa",
+          "description": "Overall responsibility for the current and future Technology Enhanced Learning (TEL) system/s at the Durban University of Technology. Contributes to policy, procedures and architecting of systems related to this, and working closely with the Information Technology department to test and implement enhancements, revisions and changes to ensure that our students and lecturers receive a robust service. Monitor existing services (application stack and databases) currently Blackboard Learn but also part of the recently formed Open LMS task team to review existing and potential systems that may be adopted in the future. Interacts with peers both locally (South Africa) and internationally to benchmark TEL on a continuous basis either through attending conferences, as part of my PhD research or pure benchmarking thus ensuring that decisions are informed by diversity of practice and experience."
+        },
+        {
+          "title": "Specialist Computer Technician",
+          "period": "August 2006 - August 2008 (2 years 1 month)",
+          "location": "",
+          "description": "My responsibilities include maintaining the Blackboard Learning Management System (including backups of content and the database, custom querying of the database, updates of the application and database server) as well as overall administration of course and user creation and support thereof."
+        }
+      ]
+    },
+    {
+      "company": "Kaytech Engineered Fabrics",
+      "position": "Information Officer",
+      "location": "",
+      "period": "April 2003 - April 2006 (3 years 1 month)",
+      "description": "Managed the Technical Library, including the physical collection as well as the Online Catalogue. Developed and maintained the Intranet using Plone. Developed and maintained the Image Database using IIS and Microsoft Access, using ASP to perform various functions such as updating and deleting entries."
+    },
+    {
+      "company": "Durban Institute of Technology",
+      "position": "Online Learning Skills Consultant / Knowledge Officer",
+      "location": "",
+      "period": "April 2000 - December 2002 (2 years 9 months)",
+      "description": "Provided one on one support to academics in the development of online materials used with WebCT (Learning Management System). Conducted workshops on web development and file management. Provided telephonic, email and person to person assistance with all aspects of online materials/resources development. Created a knowledge base as an extension of support. Developed a dynamic database of the 'Pioneers' (staff attending the Pioneers Programme), with their photos and research papers."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Durban University of Technology",
+      "degree": "Doctor of Philosophy in Information Technology",
+      "field": "Information Technology",
+      "period": "January 2016 - September 2023"
+    },
+    {
+      "institution": "Durban University of Technology",
+      "degree": "Master of Technology (Mtech)",
+      "field": "Computer Aided Language Learning",
+      "period": "2011 - 2014"
+    },
+    {
+      "institution": "GlobalNxt University",
+      "degree": "FCOT, Certificate in Online Teaching",
+      "field": "",
+      "period": "2015 - 2015"
+    },
+    {
+      "institution": "University of KwaZulu-Natal",
+      "degree": "NDP Education",
+      "field": "Web-based Learning",
+      "period": "2007 - 2007"
+    },
+    {
+      "institution": "Durban University of Technology",
+      "degree": "Btech: Library & Information Studies",
+      "field": "Information",
+      "period": "1997 - 2002"
+    }
+  ]
+}

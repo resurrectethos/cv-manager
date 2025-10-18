@@ -1,0 +1,1739 @@
+{
+    "personal_info": {
+        "name": {
+            "value": "Pregalathan Reddy",
+            "source": "original",
+            "conflicts": [
+                {
+                    "value": "Pregalathan Reddy, PhD",
+                    "source": "linkedin"
+                }
+            ]
+        },
+        "title": {
+            "value": "eLearning Systems Coordinator",
+            "source": "original",
+            "conflicts": [
+                {
+                    "value": "AI Strategist for Education & Skills Development | Founder at EdufusionAI",
+                    "source": "linkedin"
+                },
+                {
+                    "value": "",
+                    "source": "orcid"
+                }
+            ]
+        },
+        "phone": {
+            "value": "+27 81 467 8158",
+            "source": "original",
+            "conflicts": [
+                {
+                    "value": "",
+                    "source": "orcid"
+                }
+            ]
+        },
+        "email": {
+            "value": "preggy@preggyreddy.co.za",
+            "source": "original",
+            "conflicts": [
+                {
+                    "value": "preggyr@outlook.com",
+                    "source": "linkedin"
+                },
+                {
+                    "value": "",
+                    "source": "orcid"
+                }
+            ]
+        },
+        "websites": [
+            {
+                "value": "https://www.linkedin.com/in/pregalathan-reddy-11360a26/",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "https://preggyreddy.co.za",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "https://orcid.org/0000-0002-7350-1987",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "https://www.linkedin.com/in/pregalathan-reddy-phd-11360a26/",
+                "source": "orcid",
+                "conflicts": []
+            }
+        ],
+        "location": {
+            "value": "Johannesburg, Gauteng, ZA",
+            "source": "original",
+            "conflicts": [
+                {
+                    "value": "Durban, KwaZulu-Natal, South Africa",
+                    "source": "linkedin"
+                },
+                {
+                    "value": "",
+                    "source": "orcid"
+                }
+            ]
+        }
+    },
+    "profile": {
+        "summary": {
+            "value": "Dr. Pregalathan Reddy is a distinguished Digital Education Researcher and Strategist with a PhD in Information Technology and over 15 years of experience leading Technology-Enhanced Learning (TEL) initiatives in higher education.",
+            "source": "original",
+            "conflicts": []
+        },
+        "expertise": [
+            {
+                "value": "Pedagogical innovation and digital infrastructure",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "ODeL environments",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Human-AI collaboration in scholarship (The Centaur Scholar model)",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Empirical analysis of LMS user adoption",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Translating complex technical challenges into strategic, research-informed solutions",
+                "source": "original",
+                "conflicts": []
+            }
+        ]
+    },
+    "education": [
+        {
+            "institution": {
+                "value": "Durban University of Technology",
+                "source": "original",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "PhD: Information Technology",
+                "source": "original",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2016 - 2023",
+                "source": "original",
+                "conflicts": []
+            },
+            "description": {
+                "value": "The development of a computerised simulation model to guide the South African higher education sector in short and long-term planning of TEL infrastructure",
+                "source": "original",
+                "conflicts": []
+            },
+            "distinction": {
+                "value": false,
+                "source": "original",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "Manipal University",
+                "source": "original",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "Faculty Certificate in Online Learning",
+                "source": "original",
+                "conflicts": []
+            },
+            "period": {
+                "value": "Feb 2015 – April 2015",
+                "source": "original",
+                "conflicts": []
+            },
+            "description": {
+                "value": "Six-week online course focused on all pedagogical aspects of online teaching",
+                "source": "original",
+                "conflicts": []
+            },
+            "distinction": {
+                "value": false,
+                "source": "original",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "Durban University of Technology",
+                "source": "original",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "MTech: Language Practice",
+                "source": "original",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2009 – 2014",
+                "source": "original",
+                "conflicts": []
+            },
+            "description": {
+                "value": "Development of a Language Learning Object Repository (LLOR) for second language teachers of English in Computer-Assisted Language Learning",
+                "source": "original",
+                "conflicts": []
+            },
+            "distinction": {
+                "value": "cum laude",
+                "source": "original",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "University of KwaZulu-Natal",
+                "source": "original",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "Web-Based Learning & Teaching Practice",
+                "source": "original",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2007",
+                "source": "original",
+                "conflicts": []
+            },
+            "description": {
+                "value": "Part of the NDP Education (Postgraduate)",
+                "source": "original",
+                "conflicts": []
+            },
+            "distinction": {
+                "value": false,
+                "source": "original",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "Durban Institute of Technology",
+                "source": "original",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "BTech: Library & Information Studies",
+                "source": "original",
+                "conflicts": []
+            },
+            "period": {
+                "value": "1999 - 2002",
+                "source": "original",
+                "conflicts": []
+            },
+            "description": {
+                "value": "Graduated with a distinction in Information Retrieval 4",
+                "source": "original",
+                "conflicts": []
+            },
+            "distinction": {
+                "value": true,
+                "source": "original",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "Durban University of Technology",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "Doctor of Philosophy in Information Technology",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "field": {
+                "value": "Information Technology",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "period": {
+                "value": "January 2016 - September 2023",
+                "source": "linkedin",
+                "conflicts": [
+                    {
+                        "value": "2016 - 2023",
+                        "source": "orcid"
+                    }
+                ]
+            },
+            "description": {
+                "value": "Information Technology",
+                "source": "orcid",
+                "conflicts": []
+            },
+            "distinction": {
+                "value": false,
+                "source": "orcid",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "Durban University of Technology",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "Master of Technology (Mtech)",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "field": {
+                "value": "Computer Aided Language Learning",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2011 - 2014",
+                "source": "linkedin",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "GlobalNxt University",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "FCOT, Certificate in Online Teaching",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "field": {
+                "value": "",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2015 - 2015",
+                "source": "linkedin",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "University of KwaZulu-Natal",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "NDP Education",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "field": {
+                "value": "Web-based Learning",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2007 - 2007",
+                "source": "linkedin",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "Durban University of Technology",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "Btech: Library & Information Studies",
+                "source": "linkedin",
+                "conflicts": [
+                    {
+                        "value": "BTECH: Library & Information Studies",
+                        "source": "orcid"
+                    }
+                ]
+            },
+            "field": {
+                "value": "Information",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "period": {
+                "value": "1997 - 2002",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "description": {
+                "value": "Library & Information Studies",
+                "source": "orcid",
+                "conflicts": []
+            },
+            "distinction": {
+                "value": false,
+                "source": "orcid",
+                "conflicts": []
+            }
+        },
+        {
+            "institution": {
+                "value": "Durban University of Technology",
+                "source": "orcid",
+                "conflicts": []
+            },
+            "degree": {
+                "value": "Masters in Language Practice",
+                "source": "orcid",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2011 - 2014",
+                "source": "orcid",
+                "conflicts": []
+            },
+            "description": {
+                "value": "Faculty of Arts",
+                "source": "orcid",
+                "conflicts": []
+            },
+            "distinction": {
+                "value": false,
+                "source": "orcid",
+                "conflicts": []
+            }
+        }
+    ],
+    "work_experience": [
+        {
+            "company": {
+                "value": "Durban University of Technology",
+                "source": "original",
+                "conflicts": []
+            },
+            "position": {
+                "value": "eLearning Coordinator",
+                "source": "original",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2022-2025",
+                "source": "original",
+                "conflicts": []
+            },
+            "responsibilities": [
+                {
+                    "value": "Led a multidisciplinary team of academics and technicians to deliver strategic support and training for the Moodle LMS, serving a user base of over 35,000",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Designed and executed institutional training programs on the pedagogical and ethical use of generative AI, directly informing current research on faculty development in ODeL contexts",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Conducted empirical analysis of Moodle usage data to identify adoption trends and inform evidence-based system enhancements",
+                    "source": "original",
+                    "conflicts": []
+                }
+            ]
+        },
+        {
+            "company": {
+                "value": "Durban University of Technology",
+                "source": "original",
+                "conflicts": []
+            },
+            "position": {
+                "value": "eLearning Systems Coordinator",
+                "source": "original",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2006-2021",
+                "source": "original",
+                "conflicts": []
+            },
+            "responsibilities": [
+                {
+                    "value": "Directed the technical management and strategic optimisation of the Moodle LMS, ensuring stability, security, and scalability for 35,000 users",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Conducted ongoing national and international benchmarking of TEL infrastructure and practices to inform institutional strategy, directly contributing to PhD research",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Led the research, testing, and integration of new educational technology plugins and tools, aligning technical capabilities with evolving pedagogical needs",
+                    "source": "original",
+                    "conflicts": []
+                }
+            ]
+        },
+        {
+            "company": {
+                "value": "Kaytech Engineered Fabrics",
+                "source": "original",
+                "conflicts": []
+            },
+            "position": {
+                "value": "Information Officer",
+                "source": "original",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2003-2006",
+                "source": "original",
+                "conflicts": []
+            },
+            "responsibilities": [
+                {
+                    "value": "Responsible for all aspects of development and maintenance of the online library system",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Acquisition, cataloguing, indexing, classification, labelling, filing and lending",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Selective dissemination of information",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Performed scanning and cataloguing of new prints",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Set up a web-based image database for printed photo library and a CMS for the intranet using Plone",
+                    "source": "original",
+                    "conflicts": []
+                }
+            ]
+        },
+        {
+            "company": {
+                "value": "Technikon Natal",
+                "source": "original",
+                "conflicts": []
+            },
+            "position": {
+                "value": "Web-Based Learning Lecturer",
+                "source": "original",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2001-2003",
+                "source": "original",
+                "conflicts": []
+            },
+            "responsibilities": [
+                {
+                    "value": "Responsible for the training of academics in the use of the (WebCT) learning management system",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Development of online classroom content, including web design from beginner to advanced levels",
+                    "source": "original",
+                    "conflicts": []
+                }
+            ]
+        },
+        {
+            "company": {
+                "value": "Durban University of Technology",
+                "source": "orcid",
+                "conflicts": []
+            },
+            "position": {
+                "value": "eLearning Systems Specialist",
+                "source": "orcid",
+                "conflicts": []
+            },
+            "period": {
+                "value": "2008 - Present",
+                "source": "orcid",
+                "conflicts": []
+            },
+            "responsibilities": [
+                {
+                    "value": "Centre for Excellence in Learning & Teaching",
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            ]
+        }
+    ],
+    "skills": {
+        "research": [
+            {
+                "value": "Critical Realism",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Case Study Analysis",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Simulation Modeling",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Qualitative & Quantitative Data Analysis",
+                "source": "original",
+                "conflicts": []
+            }
+        ],
+        "technical": [
+            {
+                "value": "Moodle LMS Administration & Architecture",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Cloud Platforms (Azure)",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Database Management (SQL, MySQL)",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Web Technologies (HTML, CSS, PHP)",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Network & Server Administration (Linux/Windows)",
+                "source": "original",
+                "conflicts": []
+            }
+        ],
+        "pedagogical": [
+            {
+                "value": "AI in Education (The Centaur Scholar Model)",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Online Course Design & Evaluation",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "ODeL Strategy",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Digital Learning Pathways",
+                "source": "original",
+                "conflicts": []
+            },
+            {
+                "value": "Faculty Development & Training",
+                "source": "original",
+                "conflicts": []
+            }
+        ],
+        "top_skills": [
+            {
+                "value": "Artificial Intelligence (AI)",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            {
+                "value": "Go-to-Market Strategy",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            {
+                "value": "Entrepreneurship",
+                "source": "linkedin",
+                "conflicts": []
+            }
+        ],
+        "languages": [
+            {
+                "language": {
+                    "value": "English",
+                    "source": "linkedin",
+                    "conflicts": []
+                },
+                "proficiency": {
+                    "value": "Full Professional",
+                    "source": "linkedin",
+                    "conflicts": []
+                }
+            },
+            {
+                "language": {
+                    "value": "Italian",
+                    "source": "linkedin",
+                    "conflicts": []
+                },
+                "proficiency": {
+                    "value": "Elementary",
+                    "source": "linkedin",
+                    "conflicts": []
+                }
+            },
+            {
+                "language": {
+                    "value": "Spanish",
+                    "source": "linkedin",
+                    "conflicts": []
+                },
+                "proficiency": {
+                    "value": "Limited Working",
+                    "source": "linkedin",
+                    "conflicts": []
+                }
+            },
+            {
+                "language": {
+                    "value": "Afrikaans",
+                    "source": "linkedin",
+                    "conflicts": []
+                },
+                "proficiency": {
+                    "value": "Limited Working",
+                    "source": "linkedin",
+                    "conflicts": []
+                }
+            }
+        ],
+        "certifications": [
+            {
+                "value": "Internet Security",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            {
+                "value": "Proposal Reviewer 2024",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            {
+                "value": "FCOT - Faculty Certificate in Online Teaching",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            {
+                "value": "Fundamentals of Deep Learning",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            {
+                "value": "How to Design and Deploy a Simple LAN and Wi-Fi Network",
+                "source": "linkedin",
+                "conflicts": []
+            }
+        ]
+    },
+    "certifications": [
+        {
+            "name": {
+                "value": "Fundamentals of Deep Learning",
+                "source": "original",
+                "conflicts": []
+            },
+            "issuer": {
+                "value": "NVIDIA Deep Learning Institute",
+                "source": "original",
+                "conflicts": []
+            },
+            "year": {
+                "value": 2022,
+                "source": "original",
+                "conflicts": []
+            }
+        },
+        {
+            "name": {
+                "value": "Applied Data Science: An Introduction MOOC",
+                "source": "original",
+                "conflicts": []
+            },
+            "issuer": {
+                "value": "Syracuse University",
+                "source": "original",
+                "conflicts": []
+            },
+            "year": {
+                "value": 2014,
+                "source": "original",
+                "conflicts": []
+            }
+        },
+        {
+            "name": {
+                "value": "Perspectives on Data Analytics with Advances in Software Engineering",
+                "source": "original",
+                "conflicts": []
+            },
+            "issuer": {
+                "value": "AICTE",
+                "source": "original",
+                "conflicts": []
+            },
+            "year": {
+                "value": 2020,
+                "source": "original",
+                "conflicts": []
+            },
+            "location": {
+                "value": "Mumbai, India",
+                "source": "original",
+                "conflicts": []
+            }
+        }
+    ],
+    "memberships": [
+        {
+            "organization": {
+                "value": "Internet Society",
+                "source": "original",
+                "conflicts": []
+            },
+            "member_id": {
+                "value": "2247271",
+                "source": "original",
+                "conflicts": []
+            },
+            "sigs": [
+                {
+                    "value": "Affordable Internet Access",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Artificial Intelligence",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "Internet for Education",
+                    "source": "original",
+                    "conflicts": []
+                }
+            ],
+            "chapters": [
+                {
+                    "value": "Interplanetary",
+                    "source": "original",
+                    "conflicts": []
+                },
+                {
+                    "value": "South African",
+                    "source": "original",
+                    "conflicts": []
+                }
+            ]
+        },
+        {
+            "organization": {
+                "value": "Solar – Society for Learning Analytics",
+                "source": "original",
+                "conflicts": []
+            },
+            "member_id": {
+                "value": null,
+                "source": "original",
+                "conflicts": []
+            },
+            "sigs": [],
+            "chapters": []
+        }
+    ],
+    "hobbies": [
+        {
+            "value": "Running",
+            "source": "original",
+            "conflicts": []
+        },
+        {
+            "value": "Swimming",
+            "source": "original",
+            "conflicts": []
+        },
+        {
+            "value": "Reading",
+            "source": "original",
+            "conflicts": []
+        }
+    ],
+    "publications": {
+        "book_chapters": [
+            {
+                "authors": [
+                    {
+                        "value": "Pratt, D. D.",
+                        "source": "original",
+                        "conflicts": []
+                    },
+                    {
+                        "value": "Reddy, P.",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "year": {
+                    "value": "in press",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "title": {
+                    "value": "Conceptualising the teaching/learning process to ensure resilience in higher education",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "editors": [
+                    {
+                        "value": "S. Graham",
+                        "source": "original",
+                        "conflicts": []
+                    },
+                    {
+                        "value": "C. Meintjies",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "book": {
+                    "value": "Resilience in higher education: the South African experience",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "publisher": {
+                    "value": "UJ Press",
+                    "source": "original",
+                    "conflicts": []
+                }
+            }
+        ],
+        "conference_proceedings": [
+            {
+                "authors": [
+                    {
+                        "value": "Pratt, D.D.",
+                        "source": "original",
+                        "conflicts": []
+                    },
+                    {
+                        "value": "Reddy, P.",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "year": {
+                    "value": 2025,
+                    "source": "original",
+                    "conflicts": []
+                },
+                "title": {
+                    "value": "Digital-human collaboration in higher degree course evaluation",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "conference": {
+                    "value": "32nd International Conference on Learning: Human Learning and Machine Learning - Challenges and Opportunities for Artificial Intelligence in Education",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "location": {
+                    "value": "Granada",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "dates": {
+                    "value": "8-10 July 2025",
+                    "source": "original",
+                    "conflicts": []
+                }
+            },
+            {
+                "authors": [
+                    {
+                        "value": "Reddy, P.",
+                        "source": "original",
+                        "conflicts": []
+                    },
+                    {
+                        "value": "Pratt, D. D.",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "year": {
+                    "value": 2025,
+                    "source": "original",
+                    "conflicts": []
+                },
+                "title": {
+                    "value": "Copilot-assisted online course design evaluator",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "editor": {
+                    "value": "T. Bastiaens",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "proceedings": {
+                    "value": "Proceedings of EdMedia + Innovate Learning",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "pages": {
+                    "value": "395-405",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "publisher": {
+                    "value": "Association for the Advancement of Computing in Education (AACE)",
+                    "source": "original",
+                    "conflicts": []
+                }
+            },
+            {
+                "authors": [
+                    {
+                        "value": "Reddy, P.",
+                        "source": "original",
+                        "conflicts": []
+                    },
+                    {
+                        "value": "Pratt, D.",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "year": {
+                    "value": 2024,
+                    "source": "original",
+                    "conflicts": []
+                },
+                "title": {
+                    "value": "A systemic model for evaluating online course design: a critical realist approach",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "proceedings": {
+                    "value": "INTED Proceedings",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "publisher": {
+                    "value": "IATED",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "doi": {
+                    "value": "10.21125/inted.2024.1818",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "conference": {
+                    "value": "18th International Technology, Education and Development Conference",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "location": {
+                    "value": "Valencia, Spain",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "dates": {
+                    "value": "4-6 March, 2024",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "pages": {
+                    "value": "6892-6901",
+                    "source": "original",
+                    "conflicts": []
+                }
+            },
+            {
+                "authors": [
+                    {
+                        "value": "Reddy, P.",
+                        "source": "original",
+                        "conflicts": []
+                    },
+                    {
+                        "value": "Pratt, D.",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "year": {
+                    "value": 2022,
+                    "source": "original",
+                    "conflicts": []
+                },
+                "title": {
+                    "value": "Case study of migration from local in-house data centre at the Durban University of Technology to Azure Cloud",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "proceedings": {
+                    "value": "2022 Conference on Information Communications Technology and Society, ICTAS 2022 - Proceedings",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "doi": {
+                    "value": "10.1109/ICTAS53252.2022.9744660",
+                    "source": "original",
+                    "conflicts": []
+                }
+            },
+            {
+                "authors": [
+                    {
+                        "value": "Reddy, P.",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "year": {
+                    "value": 2019,
+                    "source": "original",
+                    "conflicts": []
+                },
+                "title": {
+                    "value": "A computerized simulation model to forecast higher education TEL infrastructure: arriving at the simulation development process",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "proceedings": {
+                    "value": "2019 Proceedings of 13th International Technology, Education and Development Conference",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "location": {
+                    "value": "Valencia, Spain",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "dates": {
+                    "value": "11-13 March 2019",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "pages": {
+                    "value": "1297-1301",
+                    "source": "original",
+                    "conflicts": []
+                }
+            },
+            {
+                "authors": [
+                    {
+                        "value": "Reddy, P.",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "year": {
+                    "value": 2019,
+                    "source": "original",
+                    "conflicts": []
+                },
+                "title": {
+                    "value": "Computerized simulation model for TEL infrastructure",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "proceedings": {
+                    "value": "Proceedings of the 10th International Conference on Intelligent Systems and Communication Networks (IC-ISCN 2019)",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "location": {
+                    "value": "Mumbai, India",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "dates": {
+                    "value": "22-23 February 2019",
+                    "source": "original",
+                    "conflicts": []
+                }
+            },
+            {
+                "authors": [
+                    {
+                        "value": "Reddy, P.",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "year": {
+                    "value": 2014,
+                    "source": "original",
+                    "conflicts": []
+                },
+                "title": {
+                    "value": "A learning object repository for computer assisted language learning in order to provide resources for language learners in schools in KwaZulu-Natal",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "institution": {
+                    "value": "Durban University of Technology",
+                    "source": "original",
+                    "conflicts": []
+                }
+            },
+            {
+                "authors": [
+                    {
+                        "value": "Reddy, P.",
+                        "source": "original",
+                        "conflicts": []
+                    }
+                ],
+                "year": {
+                    "value": 2012,
+                    "source": "original",
+                    "conflicts": []
+                },
+                "title": {
+                    "value": "The development of a language learning object repository (LLOR) for second language teachers in KwaZulu-Natal, South Africa",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "proceedings": {
+                    "value": "Proceedings of 5th International Conference of Education Research and Innovation (ICERI 2012)",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "location": {
+                    "value": "Madrid, Spain",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "dates": {
+                    "value": "19-21 November 2012",
+                    "source": "original",
+                    "conflicts": []
+                },
+                "pages": {
+                    "value": "5454-5462",
+                    "source": "original",
+                    "conflicts": []
+                }
+            },
+            {
+                "title": {
+                    "value": "Digital-human collaboration in higher degree course evaluation",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2025",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [
+                    {
+                        "value": "Pregalathan Reddy",
+                        "source": "orcid",
+                        "conflicts": []
+                    },
+                    {
+                        "value": "Pratt, D.D",
+                        "source": "orcid",
+                        "conflicts": []
+                    }
+                ],
+                "doi": {
+                    "value": null,
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            },
+            {
+                "title": {
+                    "value": "A SYSTEMIC MODEL FOR EVALUATING ONLINE COURSE DESIGN: A CRITICAL REALIST APPROACH",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2024",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [
+                    {
+                        "value": "Pregalathan Reddy",
+                        "source": "orcid",
+                        "conflicts": []
+                    },
+                    {
+                        "value": "Deidre Pratt",
+                        "source": "orcid",
+                        "conflicts": []
+                    }
+                ],
+                "doi": {
+                    "value": "10.21125/inted.2024.1818",
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            },
+            {
+                "title": {
+                    "value": "A computerized simulation model to forecast higher education TEL infrastructure: arriving at the simulation development process.",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2019",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [],
+                "doi": {
+                    "value": null,
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            },
+            {
+                "title": {
+                    "value": "INTED2019 Proceedings",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2019",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [],
+                "doi": {
+                    "value": "10.21125/inted.2019",
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            },
+            {
+                "title": {
+                    "value": "Computerized simulation model for TEL infrastructure",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2019",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [],
+                "doi": {
+                    "value": null,
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            },
+            {
+                "title": {
+                    "value": "The development of a language learning object repository (LLOR) for second language teachers of KwaZulu-Natal, South Africa",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2014",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [],
+                "doi": {
+                    "value": null,
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            },
+            {
+                "title": {
+                    "value": "THE DEVELOPMENT OF A LANGUAGE LEARNING OBJECT REPOSITORY (LLOR) FOR SECOND LANGUAGE TEACHERS IN KWAZULU-NATAL, SOUTH AFRICA",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2012",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [
+                    {
+                        "value": "Reddy, Pregalathan",
+                        "source": "orcid",
+                        "conflicts": []
+                    }
+                ],
+                "doi": {
+                    "value": null,
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            }
+        ],
+        "journal_articles": [
+            {
+                "title": {
+                    "value": "Digital-Human Collaboration in Higher Degree Course Evaluation",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2025",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [
+                    {
+                        "value": "Deirdre Pratt",
+                        "source": "orcid",
+                        "conflicts": []
+                    },
+                    {
+                        "value": "Pregalathan Reddy",
+                        "source": "orcid",
+                        "conflicts": []
+                    }
+                ],
+                "doi": {
+                    "value": "10.18848/2327-0144/cgp/v32i02/223-240",
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            },
+            {
+                "title": {
+                    "value": "Case study of migration from local in-house data centre at the Durban University of Technology to Azure Cloud",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2022",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [],
+                "doi": {
+                    "value": "10.1109/ictas53252.2022.9744660",
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            }
+        ],
+        "other": [
+            {
+                "title": {
+                    "value": "A learning object repository for computer assisted language learning in order to provide resources for language learners in schools in KwaZulu-Natal",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "2014",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [],
+                "doi": {
+                    "value": null,
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            },
+            {
+                "title": {
+                    "value": "A learning object repository for computer assisted language learning in order to provide resources for language learners in schools in KwaZulu-Natal",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "year": {
+                    "value": "",
+                    "source": "orcid",
+                    "conflicts": []
+                },
+                "authors": [
+                    {
+                        "value": "Pregalathan Reddy",
+                        "source": "orcid",
+                        "conflicts": []
+                    }
+                ],
+                "doi": {
+                    "value": "10.51415/10321/1352",
+                    "source": "orcid",
+                    "conflicts": []
+                }
+            }
+        ]
+    },
+    "referees": [
+        {
+            "name": {
+                "value": "Mr Soren Aalto",
+                "source": "original",
+                "conflicts": []
+            },
+            "position": {
+                "value": "Amazon Web Services – EC2: Senior Software Development Engineer",
+                "source": "original",
+                "conflicts": []
+            },
+            "phone": {
+                "value": "+27 83 262 1869",
+                "source": "original",
+                "conflicts": []
+            },
+            "email": {
+                "value": "sorena.aalto@gmail.com",
+                "source": "original",
+                "conflicts": []
+            }
+        },
+        {
+            "name": {
+                "value": "Prof D.D Pratt",
+                "source": "original",
+                "conflicts": []
+            },
+            "position": {
+                "value": "Durban University of Technology: Senior Researcher",
+                "source": "original",
+                "conflicts": []
+            },
+            "phone": {
+                "value": "+27 82 422 9570",
+                "source": "original",
+                "conflicts": []
+            },
+            "email": {
+                "value": "deep@dut.ac.za",
+                "source": "original",
+                "conflicts": []
+            }
+        },
+        {
+            "name": {
+                "value": "Prof Graham Stewart",
+                "source": "original",
+                "conflicts": []
+            },
+            "position": {
+                "value": "Durban University of University – retired (Formerly Deputy Dean: FAD, E-learning Project Manager)",
+                "source": "original",
+                "conflicts": []
+            },
+            "phone": {
+                "value": "+44 7563841929",
+                "source": "original",
+                "conflicts": []
+            },
+            "email": {
+                "value": "stewartg34@gmail.com",
+                "source": "original",
+                "conflicts": []
+            }
+        }
+    ],
+    "summary": {
+        "value": "I am a multidisciplinary e-Learning professional with over two decades of experience at the intersection of education, technology, and innovation. My expertise spans academic development, LMS administration (Blackboard, Moodle), and strategic digital transformation in higher education. With a PhD in Information Technology (2023) and a Master's in Language Practice (cum laude, 2014), I bring a unique blend of pedagogical insight and technical proficiency. My doctoral research focused on developing a computerized simulation model to guide strategic planning for technology-enhanced learning (TEL) infrastructure in South African universities. As an AI Strategist and 4IR Advocate, I actively explore the integration of artificial intelligence in education—from intelligent course design to data-driven decision-making. I've led institutional LMS migrations, facilitated national training programmes, and contributed to global conversations on digital education. My research contributions include work on simulation modeling for TEL infrastructure, cloud migration in higher education, and most recently, the development of a Copilot-Assisted Online Course Design Evaluator—a tool that bridges AI and pedagogy to support quality assurance in digital learning environments. I am passionate about shaping the future of education through research, innovation, and inclusive digital strategies.",
+        "source": "linkedin",
+        "conflicts": []
+    },
+    "experience": [
+        {
+            "company": {
+                "value": "EdufusionAI",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "position": {
+                "value": "Founder & CEO",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "location": {
+                "value": "Durban, KwaZulu-Natal, South Africa",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "period": {
+                "value": "May 2025 - Present (6 months)",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "description": {
+                "value": "Building an AI-powered market intelligence and compliance engine to bridge South Africa's critical skills gap. EdufusionAI's platform helps Skills Development Providers get accredited faster by identifying high-demand qualification niches and automating complex QCTO compliance. Our vision is to create a more dynamic, data-driven, and effective skills economy.",
+                "source": "linkedin",
+                "conflicts": []
+            }
+        },
+        {
+            "company": {
+                "value": "Durban University of Technology",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "positions": [
+                {
+                    "title": {
+                        "value": "ELearning Systems Coordinator",
+                        "source": "linkedin",
+                        "conflicts": []
+                    },
+                    "period": {
+                        "value": "January 2020 - Present (5 years 10 months)",
+                        "source": "linkedin",
+                        "conflicts": []
+                    },
+                    "location": {
+                        "value": "Durban Area, South Africa",
+                        "source": "linkedin",
+                        "conflicts": []
+                    },
+                    "description": {
+                        "value": "I have been ensuring that a LMS is available for our 35k users using different infrastructure such as in-house hosting on Windows Server and also on Azure Cloud. I also ensure that we provide help desk support services as well as provide various reports about the performance of the LMS as well as how it is used by lecturers and students. I do all the system updates and maintenance including the Linux OS and the database, as well as storage assessment and upgrading and backups.",
+                        "source": "linkedin",
+                        "conflicts": []
+                    }
+                },
+                {
+                    "title": {
+                        "value": "eLearning Systems Administrator",
+                        "source": "linkedin",
+                        "conflicts": []
+                    },
+                    "period": {
+                        "value": "August 2008 - Present (17 years 3 months)",
+                        "source": "linkedin",
+                        "conflicts": []
+                    },
+                    "location": {
+                        "value": "Durban Area, South Africa",
+                        "source": "linkedin",
+                        "conflicts": []
+                    },
+                    "description": {
+                        "value": "Overall responsibility for the current and future Technology Enhanced Learning (TEL) system/s at the Durban University of Technology. Contributes to policy, procedures and architecting of systems related to this, and working closely with the Information Technology department to test and implement enhancements, revisions and changes to ensure that our students and lecturers receive a robust service. Monitor existing services (application stack and databases) currently Blackboard Learn but also part of the recently formed Open LMS task team to review existing and potential systems that may be adopted in the future. Interacts with peers both locally (South Africa) and internationally to benchmark TEL on a continuous basis either through attending conferences, as part of my PhD research or pure benchmarking thus ensuring that decisions are informed by diversity of practice and experience.",
+                        "source": "linkedin",
+                        "conflicts": []
+                    }
+                },
+                {
+                    "title": {
+                        "value": "Specialist Computer Technician",
+                        "source": "linkedin",
+                        "conflicts": []
+                    },
+                    "period": {
+                        "value": "August 2006 - August 2008 (2 years 1 month)",
+                        "source": "linkedin",
+                        "conflicts": []
+                    },
+                    "location": {
+                        "value": "",
+                        "source": "linkedin",
+                        "conflicts": []
+                    },
+                    "description": {
+                        "value": "My responsibilities include maintaining the Blackboard Learning Management System (including backups of content and the database, custom querying of the database, updates of the application and database server) as well as overall administration of course and user creation and support thereof.",
+                        "source": "linkedin",
+                        "conflicts": []
+                    }
+                }
+            ]
+        },
+        {
+            "company": {
+                "value": "Kaytech Engineered Fabrics",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "position": {
+                "value": "Information Officer",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "location": {
+                "value": "",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "period": {
+                "value": "April 2003 - April 2006 (3 years 1 month)",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "description": {
+                "value": "Managed the Technical Library, including the physical collection as well as the Online Catalogue. Developed and maintained the Intranet using Plone. Developed and maintained the Image Database using IIS and Microsoft Access, using ASP to perform various functions such as updating and deleting entries.",
+                "source": "linkedin",
+                "conflicts": []
+            }
+        },
+        {
+            "company": {
+                "value": "Durban Institute of Technology",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "position": {
+                "value": "Online Learning Skills Consultant / Knowledge Officer",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "location": {
+                "value": "",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "period": {
+                "value": "April 2000 - December 2002 (2 years 9 months)",
+                "source": "linkedin",
+                "conflicts": []
+            },
+            "description": {
+                "value": "Provided one on one support to academics in the development of online materials used with WebCT (Learning Management System). Conducted workshops on web development and file management. Provided telephonic, email and person to person assistance with all aspects of online materials/resources development. Created a knowledge base as an extension of support. Developed a dynamic database of the 'Pioneers' (staff attending the Pioneers Programme), with their photos and research papers.",
+                "source": "linkedin",
+                "conflicts": []
+            }
+        }
+    ]
+}

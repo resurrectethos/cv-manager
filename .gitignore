@@ -24,6 +24,7 @@ Thumbs.db
 *.swp
 *.swo
 *~
+~$*.docx
 
 # Backup files
 *.bak
