@@ -37,14 +37,4 @@ build/
 documents/
 
 # Intermediate data files
-cv_data_merged.json
-cv_data_from_linkedin.json
-cv_data_from_orcid.json
-
-# Other
-claude_guide_cv_manager.docx
-comprehensive_cv.html
-*2025*.html
-*2025*.md
-*2025*.txt
-Profile.pdf
+intermediate_files/

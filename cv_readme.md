@@ -25,13 +25,14 @@ cv-manager/
 ├── cv_master.py                    # Master CLI (all features)
 ├── cv_generator.py                 # Core CV generation
 ├── cv_pdf_generator.py             # PDF generation
-├── cv_skills_matrix.py             # Skills visualizations
 ├── cv_publication_metrics.py       # Citation tracking
 ├── cv_cover_letter.py              # Cover letter generator
 ├── cv_application_tracker.py       # Application tracking
 ├── enhanced_requirements.txt       # Dependencies
-├── README.md                       # This file
+├── cv_readme.md                    # This file
+├── project_chronology.md           # History of the project development
 ├── documents/                      # Generated files (PDF, HTML, MD)
+├── intermediate_files/             # Intermediate files, build artifacts, etc.
 └── templates/
     ├── cv_template.html.jinja
     └── style.css                   # Stylesheet for HTML CVs
@@ -235,3 +236,7 @@ Features:
 - Deadline reminders
 - Export to CSV
 - Analytics
+
+## 📜 Project History
+
+A detailed chronology of the project's development, including the rationale behind key changes, is available in the [project_chronology.md](project_chronology.md) file.

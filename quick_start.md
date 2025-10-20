@@ -17,7 +17,7 @@ source venv/bin/activate  # Mac/Linux
 venv\Scripts\activate     # Windows
 
 # Install dependencies
-pip install weasyprint markdown2 matplotlib numpy scholarly requests
+pip install -r enhanced_requirements.txt
 ```
 
 ### Step 2: Add Files (1 minute)

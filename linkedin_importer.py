@@ -1,9 +1,8 @@
 import pdfplumber
 import re
 import json
+import argparse
 from collections import defaultdict
-
-PDF_PATH = "/Users/preggyreddy/projects/cv-manager/Profile.pdf"
 
 # Define the major sections we want to capture
 SECTION_HEADERS = ["Summary", "Experience", "Education", "Top Skills", "Languages", "Certifications", "Publications"]
@@ -110,7 +109,11 @@ def parse_education(text):
     return entries
 
 def main():
-    section_texts = get_section_texts(PDF_PATH)
+    parser = argparse.ArgumentParser(description="Import CV data from a LinkedIn PDF profile.")
+    parser.add_argument("pdf_path", help="The path to the LinkedIn PDF profile.")
+    args = parser.parse_args()
+
+    section_texts = get_section_texts(args.pdf_path)
     cv_data = defaultdict(dict)
 
     if section_texts.get("Summary"):
