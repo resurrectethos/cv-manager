@@ -2,7 +2,21 @@ import json
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Optional
+import os
 
+def get_versioned_filename(output_dir, style, format):
+    date_str = datetime.now().strftime('%Y%m%d')
+    base_filename = f"cv_{style}_{date_str}"
+    extension = format.replace('markdown', 'md')
+    
+    version = 1
+    output_file = os.path.join(output_dir, f"{base_filename}.{extension}")
+    
+    while os.path.exists(output_file):
+        version += 1
+        output_file = os.path.join(output_dir, f"{base_filename}_v{version}.{extension}")
+        
+    return output_file
 
 class CVGenerator:
     """Generate customized CVs from JSON data for different audiences."""
@@ -44,7 +58,123 @@ class CVGenerator:
         """Add new certification."""
         self.data['certifications'].insert(0, certification)
         return self
-    
+
+    def _generate_profile(self, style: str, sections: Optional[List[str]]) -> List[str]:
+        if not sections or 'profile' in sections:
+            md = ["## Profile"]
+            md.append(self.data['profile']['summary'])
+            if style in ["research", "academic"]:
+                md.append("\n**Key Expertise:**")
+                for exp in self.data['profile']['expertise']:
+                    md.append(f"- {exp}")
+            md.append("")
+            return md
+        return []
+
+    def _generate_core_competencies(self, style: str, sections: Optional[List[str]]) -> List[str]:
+        if not sections or 'core_competencies' in sections:
+            md = ["## Core Competencies"]
+            if 'core_competencies' in self.data:
+                for competency_type, competencies in self.data['core_competencies'].items():
+                    title = competency_type.replace("_", " & ").title()
+                    md.append(f"### {title}")
+                    for competency in competencies:
+                        md.append(f"- {competency}")
+                    md.append("")
+            return md
+        return []
+
+    def _generate_project_experience(self, style: str, sections: Optional[List[str]]) -> List[str]:
+        if not sections or 'project_experience' in sections:
+            if 'project_experience' in self.data and self.data['project_experience']:
+                md = ["## Project Experience"]
+                for project in self.data['project_experience']:
+                    md.append(f"### {project['title']}")
+                    for desc in project['description']:
+                        md.append(f"- {desc}")
+                    md.append("")
+                return md
+        return []
+
+    def _generate_work_experience(self, style: str, sections: Optional[List[str]], experience_limit: Optional[int]) -> List[str]:
+        if not sections or 'experience' in sections:
+            md = ["## Work Experience"]
+            experiences = self.data['work_experience'][:experience_limit] if experience_limit else self.data['work_experience']
+            for exp in experiences:
+                md.append(f"### {exp['position']}")
+                md.append(f"**{exp['company']}** | {exp['period']}\n")
+                for resp in exp['responsibilities']:
+                    md.append(f"- {resp}")
+                md.append("")
+            return md
+        return []
+
+    def _generate_education(self, style: str, sections: Optional[List[str]]) -> List[str]:
+        if not sections or 'education' in sections:
+            md = ["## Education"]
+            for edu in self.data['education']:
+                distinction = f" ({edu['distinction']})" if edu.get('distinction') else ""
+                md.append(f"### {edu['degree']}{distinction}")
+                md.append(f"**{edu['institution']}** | {edu['period']}")
+                md.append(f"{edu['description']}\n")
+            return md
+        return []
+
+    def _generate_certifications(self, style: str, sections: Optional[List[str]]) -> List[str]:
+        if not sections or 'certifications' in sections:
+            md = ["## Certifications"]
+            for cert in self.data['certifications']:
+                location = f" | {cert['location']}" if 'location' in cert else ""
+                md.append(f"- **{cert['name']}** - {cert['issuer']} ({cert['year']}){location}")
+            md.append("")
+            return md
+        return []
+
+    def _generate_publications(self, style: str, sections: Optional[List[str]], publications_limit: Optional[int]) -> List[str]:
+        if (not sections or 'publications' in sections) and style in ["research", "academic"]:
+            md = ["## Publications"]
+            if self.data['publications']['book_chapters']:
+                md.append("### Book Chapters")
+                for pub in self.data['publications']['book_chapters'][:publications_limit]:
+                    authors = " & ".join(pub['authors'])
+                    md.append(f"- {authors} ({pub['year']}). *{pub['title']}*. In {', '.join(pub['editors'])} (Eds.), *{pub['book']}*. {pub['publisher']}.")
+                md.append("")
+            if self.data['publications']['conference_proceedings']:
+                md.append("### Conference Proceedings")
+                pubs = self.data['publications']['conference_proceedings'][:publications_limit] if publications_limit else self.data['publications']['conference_proceedings']
+                for pub in pubs:
+                    authors = " & ".join(pub['authors'])
+                    doi = f" doi:{pub['doi']}" if 'doi' in pub else ""
+                    md.append(f"- {authors} ({pub['year']}). *{pub['title']}*{doi}")
+                md.append("")
+            return md
+        return []
+
+    def _generate_memberships(self, style: str, sections: Optional[List[str]]) -> List[str]:
+        if not sections or 'memberships' in sections:
+            md = ["## Professional Memberships"]
+            for mem in self.data['memberships']:
+                member_id = f" (ID: {mem['member_id']})" if mem['member_id'] else ""
+                md.append(f"### {mem['organization']}{member_id}")
+                if mem['sigs']:
+                    md.append(f"Special Interest Groups: {', '.join(mem['sigs'])}")
+                if mem['chapters']:
+                    md.append(f"Chapters: {', '.join(mem['chapters'])}")
+                md.append("")
+            return md
+        return []
+
+    def _generate_referees(self, style: str, sections: Optional[List[str]]) -> List[str]:
+        if (not sections or 'referees' in sections) and style != "industry":
+            md = ["## Referees"]
+            for ref in self.data['referees']:
+                md.append(f"### {ref['name']}")
+                md.append(f"{ref['position']}")
+                md.append(f"- Phone: {ref['phone']}")
+                md.append(f"- Email: {ref['email']}\n")
+            return md
+        return []
+
     def generate_markdown(self, 
                          sections: Optional[List[str]] = None,
                          experience_limit: Optional[int] = None,
@@ -72,169 +202,115 @@ class CVGenerator:
         for website in self.data['personal_info']['websites']:
             md.append(f"- {website}")
         md.append("")
-        
-        # Profile (customized by style)
-        if not sections or 'profile' in sections:
-            md.append("## Profile")
-            md.append(self.data['profile']['summary'])
-            
-            if style in ["research", "academic"]:
-                md.append("\n**Key Expertise:**")
-                for exp in self.data['profile']['expertise']:
-                    md.append(f"- {exp}")
-            md.append("")
-        
-        # Education
-        if not sections or 'education' in sections:
-            md.append("## Education")
-            for edu in self.data['education']:
-                distinction = f" ({edu['distinction']})" if edu['distinction'] and edu['distinction'] != False else ""
-                md.append(f"### {edu['degree']}{distinction}")
-                md.append(f"**{edu['institution']}** | {edu['period']}")
-                md.append(f"{edu['description']}\n")
-        
-        # Work Experience
-        if not sections or 'experience' in sections:
-            md.append("## Work Experience")
-            experiences = self.data['work_experience'][:experience_limit] if experience_limit else self.data['work_experience']
-            
-            for exp in experiences:
-                md.append(f"### {exp['position']}")
-                md.append(f"**{exp['company']}** | {exp['period']}\n")
-                for resp in exp['responsibilities']:
-                    md.append(f"- {resp}")
-                md.append("")
-        
-        # Skills (organized by style)
-        if not sections or 'skills' in sections:
-            md.append("## Skills & Competencies")
-            
-            skill_order = {
-                "research": ["research", "pedagogical", "technical"],
-                "academic": ["pedagogical", "research", "technical"],
-                "industry": ["technical", "pedagogical", "research"],
-                "technical": ["technical", "research", "pedagogical"]
-            }
-            
-            order = skill_order.get(style, ["research", "technical", "pedagogical"])
-            
-            for skill_type in order:
-                if skill_type in self.data['skills']:
-                    title = skill_type.replace("_", " ").title()
-                    md.append(f"### {title}")
-                    for skill in self.data['skills'][skill_type]:
-                        md.append(f"- {skill}")
-                    md.append("")
-        
-        # Certifications
-        if not sections or 'certifications' in sections:
-            md.append("## Certifications")
-            for cert in self.data['certifications']:
-                location = f" | {cert['location']}" if 'location' in cert else ""
-                md.append(f"- **{cert['name']}** - {cert['issuer']} ({cert['year']}){location}")
-            md.append("")
-        
-        # Publications (prioritized for research/academic)
-        if (not sections or 'publications' in sections) and style in ["research", "academic"]:
-            md.append("## Publications")
-            
-            if self.data['publications']['book_chapters']:
-                md.append("### Book Chapters")
-                for pub in self.data['publications']['book_chapters'][:publications_limit]:
-                    authors = " & ".join(pub['authors'])
-                    md.append(f"- {authors} ({pub['year']}). *{pub['title']}*. In {', '.join(pub['editors'])} (Eds.), *{pub['book']}*. {pub['publisher']}.")
-                md.append("")
-            
-            if self.data['publications']['conference_proceedings']:
-                md.append("### Conference Proceedings")
-                pubs = self.data['publications']['conference_proceedings'][:publications_limit] if publications_limit else self.data['publications']['conference_proceedings']
-                for pub in pubs:
-                    authors = " & ".join(pub['authors'])
-                    doi = f" doi:{pub['doi']}" if 'doi' in pub else ""
-                    md.append(f"- {authors} ({pub['year']}). *{pub['title']}*{doi}")
-                md.append("")
-        
-        # Memberships
-        if not sections or 'memberships' in sections:
-            md.append("## Professional Memberships")
-            for mem in self.data['memberships']:
-                member_id = f" (ID: {mem['member_id']})" if mem['member_id'] else ""
-                md.append(f"### {mem['organization']}{member_id}")
-                if mem['sigs']:
-                    md.append(f"Special Interest Groups: {', '.join(mem['sigs'])}")
-                if mem['chapters']:
-                    md.append(f"Chapters: {', '.join(mem['chapters'])}")
-                md.append("")
-        
-        # Referees (optional for some styles)
-        if (not sections or 'referees' in sections) and style != "industry":
-            md.append("## Referees")
-            for ref in self.data['referees']:
-                md.append(f"### {ref['name']}")
-                md.append(f"{ref['position']}")
-                md.append(f"- Phone: {ref['phone']}")
-                md.append(f"- Email: {ref['email']}\n")
+
+        section_generators = {
+            'profile': lambda: self._generate_profile(style, sections),
+            'core_competencies': lambda: self._generate_core_competencies(style, sections),
+            'project_experience': lambda: self._generate_project_experience(style, sections),
+            'experience': lambda: self._generate_work_experience(style, sections, experience_limit),
+            'education': lambda: self._generate_education(style, sections),
+            'certifications': lambda: self._generate_certifications(style, sections),
+            'publications': lambda: self._generate_publications(style, sections, publications_limit),
+            'memberships': lambda: self._generate_memberships(style, sections),
+            'referees': lambda: self._generate_referees(style, sections),
+        }
+
+        section_order = {
+            "research": ["profile", "education", "experience", "core_competencies", "publications", "certifications", "memberships", "referees"],
+            "academic": ["profile", "education", "experience", "core_competencies", "publications", "certifications", "memberships", "referees"],
+            "industry": ["profile", "core_competencies", "experience", "project_experience", "education", "certifications"],
+            "technical": ["profile", "core_competencies", "project_experience", "experience", "education", "certifications"],
+        }
+
+        order = section_order.get(style, section_order['research'])
+
+        for section_name in order:
+            if section_name in section_generators:
+                md.extend(section_generators[section_name]())
         
         return "\n".join(md)
     
     def generate_html(self, **kwargs) -> str:
-        """Generate CV in HTML format."""
+        """Generate CV in HTML format with improved structure."""
         md_content = self.generate_markdown(**kwargs)
         
-        # Simple Markdown to HTML conversion
-        html_lines = []
-        html_lines.append("""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - {}</title>
-    <style>
-        body {{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }}
-        h1 {{ color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }}
-        h2 {{ color: #34495e; margin-top: 30px; border-bottom: 2px solid #ecf0f1; padding-bottom: 5px; }}
-        h3 {{ color: #7f8c8d; margin-top: 20px; }}
-        a {{ color: #3498db; text-decoration: none; }}
-        a:hover {{ text-decoration: underline; }}
-        ul {{ margin: 10px 0; }}
-        li {{ margin: 5px 0; }}
-        @media print {{
-            body {{ margin: 0; padding: 20px; }}
-        }}
-    </style>
-</head>
-<body>
-""".format(self.data['personal_info']['name']))
-        
-        # Convert markdown to HTML (basic conversion)
-        for line in md_content.split('\n'):
-            if line.startswith('# '):
-                html_lines.append(f"<h1>{line[2:]}</h1>")
-            elif line.startswith('## '):
-                html_lines.append(f"<h2>{line[3:]}</h2>")
+        html_lines = [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "    <meta charset=\"UTF-8\">",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            f"    <title>CV - {self.data['personal_info']['name']}</title>",
+            "    <link rel=\"stylesheet\" href=\"../templates/style.css\">",
+            "</head>",
+            "<body>"
+        ]
+
+        lines = md_content.split('\n')
+        in_section = False
+        in_ul = False
+
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+
+            if line.startswith('## '):
+                if in_ul:
+                    html_lines.append("    </ul>")
+                    in_ul = False
+                if in_section:
+                    html_lines.append("</section>")
+                
+                html_lines.append(f"<section>")
+                html_lines.append(f"    <h2>{line[3:]}</h2>")
+                in_section = True
+            
+            elif line.startswith('# '):
+                if in_ul:
+                    html_lines.append("    </ul>")
+                    in_ul = False
+                if in_section:
+                    html_lines.append("</section>")
+                
+                html_lines.append(f"<header>")
+                html_lines.append(f"    <h1>{line[2:]}</h1>")
+                in_section = False # Header is not a section
+
             elif line.startswith('### '):
-                html_lines.append(f"<h3>{line[4:]}</h3>")
+                if in_ul:
+                    html_lines.append("    </ul>")
+                    in_ul = False
+                html_lines.append(f"    <h3>{line[4:]}</h3>")
+
             elif line.startswith('- '):
-                html_lines.append(f"<li>{line[2:]}</li>")
-            elif line.startswith('**') and line.endswith('**'):
-                html_lines.append(f"<p><strong>{line[2:-2]}</strong></p>")
-            elif line.strip():
-                # Convert **text** to <strong>text</strong>
-                line = line.replace('**', '<strong>', 1).replace('**', '</strong>', 1)
-                html_lines.append(f"<p>{line}</p>")
+                if not in_ul:
+                    html_lines.append("    <ul>")
+                    in_ul = True
+                
+                processed_line = line[2:]
+                processed_line = processed_line.replace('**', '<strong>').replace('**', '</strong>')
+                html_lines.append(f"        <li>{processed_line}</li>")
+
+            elif line.startswith('**'):
+                if in_ul:
+                    html_lines.append("    </ul>")
+                    in_ul = False
+                html_lines.append(f"    <p>{line.replace('**', '<strong>', 1).replace('**', '</strong>', 1)}</p>")
+            
             else:
-                html_lines.append("<br>")
-        
-        html_lines.append("""
-</body>
-</html>""")
+                if in_ul:
+                    html_lines.append("    </ul>")
+                    in_ul = False
+                html_lines.append(f"    <p>{line}</p>")
+
+        if in_ul:
+            html_lines.append("    </ul>")
+        if in_section:
+            html_lines.append("</section>")
+
+        html_lines.append("</body>")
+        html_lines.append("</html>")
         
         return "\n".join(html_lines)
     
@@ -257,31 +333,35 @@ class CVGenerator:
 if __name__ == "__main__":
     cv = CVGenerator()
     
+    # Create documents directory if it doesn't exist
+    output_dir = "documents"
+    os.makedirs(output_dir, exist_ok=True)
+
     # Generate different versions
     print("Generating CV versions...")
     
     # 1. Research-focused CV (full publications)
-    cv.save_cv("cv_research_focused.md", 
+    cv.save_cv(get_versioned_filename(output_dir, "research", "md"), 
                format="markdown",
                style="research")
     
     # 2. Industry-focused CV (condensed, technical focus)
-    cv.save_cv("cv_industry.md",
+    cv.save_cv(get_versioned_filename(output_dir, "industry", "md"),
                format="markdown", 
                style="industry",
                experience_limit=3,
                publications_limit=5,
-               sections=['profile', 'experience', 'skills', 'certifications'])
+               sections=['profile', 'experience', 'core_competencies', 'certifications'])
     
     # 3. Academic CV (comprehensive)
-    cv.save_cv("cv_academic.html",
+    cv.save_cv(get_versioned_filename(output_dir, "academic", "html"),
                format="html",
                style="academic")
     
     # 4. Technical CV
-    cv.save_cv("cv_technical.md",
+    cv.save_cv(get_versioned_filename(output_dir, "technical", "md"),
                format="markdown",
                style="technical",
-               sections=['profile', 'skills', 'experience', 'certifications'])
+               sections=['profile', 'core_competencies', 'experience', 'certifications'])
     
     print("\nDone! Generated 4 CV versions.")

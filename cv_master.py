@@ -7,6 +7,7 @@ import argparse
 import json
 from datetime import datetime
 from cv_generator import CVGenerator
+from cv_pdf_generator import PDFGenerator
 
 
 def add_experience(cv: CVGenerator):
@@ -120,6 +121,22 @@ def update_contact(cv: CVGenerator):
         print("\nNo changes made")
 
 
+import os
+
+def get_versioned_filename(output_dir, style, format):
+    date_str = datetime.now().strftime('%Y%m%d')
+    base_filename = f"cv_{style}_{date_str}"
+    extension = format.replace('markdown', 'md')
+    
+    version = 1
+    output_file = os.path.join(output_dir, f"{base_filename}.{extension}")
+    
+    while os.path.exists(output_file):
+        version += 1
+        output_file = os.path.join(output_dir, f"{base_filename}_v{version}.{extension}")
+        
+    return output_file
+
 def generate_cv(cv: CVGenerator, args):
     """Generate CV with specified options."""
     print(f"\n=== Generating CV ===")
@@ -128,7 +145,6 @@ def generate_cv(cv: CVGenerator, args):
     
     kwargs = {
         'style': args.style,
-        'format': args.format
     }
     
     if args.limit_experience:
@@ -139,10 +155,21 @@ def generate_cv(cv: CVGenerator, args):
     
     if args.sections:
         kwargs['sections'] = args.sections.split(',')
-    
-    output_file = args.output or f"cv_{args.style}_{datetime.now().strftime('%Y%m%d')}.{args.format.replace('markdown', 'md')}"
-    
-    cv.save_cv(output_file, **kwargs)
+
+    output_dir = "documents"
+    os.makedirs(output_dir, exist_ok=True)
+
+    if args.output:
+        output_file = os.path.join(output_dir, args.output)
+    else:
+        output_file = get_versioned_filename(output_dir, args.style, args.format)
+
+    if args.format == 'pdf':
+        pdf_gen = PDFGenerator(cv)
+        pdf_gen.generate_pdf(output_file, **kwargs)
+    else:
+        cv.save_cv(output_file, format=args.format, **kwargs)
+        
     print(f"\n✓ CV generated: {output_file}")
 
 
@@ -202,7 +229,7 @@ def interactive_menu(cv: CVGenerator):
             style_map = {"1": "research", "2": "industry", "3": "academic", "4": "technical"}
             style = style_map.get(style_choice, "research")
             
-            format_choice = input("Format (markdown/html) [markdown]: ").strip() or "markdown"
+            format_choice = input("Format (markdown/html/pdf) [markdown]: ").strip() or "markdown"
             
             # Create a minimal args object
             class Args:

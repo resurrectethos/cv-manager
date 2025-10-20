@@ -1,0 +1,11 @@
+{
+    "personal_info": {
+        "name": "John Doe, PhD"
+    },
+    "education": [
+        {
+            "institution": "State University",
+            "degree": "M.Sc. Data Science"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "personal_info": {
+        "name": "John Doe",
+        "title": "Software Engineer"
+    },
+    "education": [
+        {
+            "institution": "University of Technology",
+            "degree": "B.Sc. Computer Science"
+        }
+    ]
+}

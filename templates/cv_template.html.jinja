@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - {{ personal_info.name.value }}</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; }
+        h1, h2, h3, p, li { position: relative; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 30px; border-bottom: 2px solid #ecf0f1; padding-bottom: 5px; }
+        h3 { color: #7f8c8d; margin-top: 20px; margin-bottom: 5px; }
+        p { margin-top: 0; margin-bottom: 10px; }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul { margin-top: 0; padding-left: 20px; }
+        .metadata { font-size: 0.7em; color: #bdc3c7; font-style: italic; }
+        .conflicts { font-size: 0.8em; color: #e74c3c; }
+    </style>
+</head>
+<body>
+
+{# Macro to display a field, its metadata, and its conflicts #}
+{%- macro display_field(field) -%}
+    {{ field.value | default('', true) }}
+    {%- if field.source -%}
+        <span class="metadata"> ({{ field.source }} | {{ field.confidence }})</span>
+    {%- endif -%}
+    {%- if field.conflicts -%}
+        <small class="conflicts"><em>
+        {%- for conflict in field.conflicts -%}
+            <br>&nbsp;&nbsp;-&gt; {{ conflict.value }} ({{ conflict.source }} | {{ conflict.confidence }})
+        {%- endfor -%}
+        </em></small>
+    {%- endif -%}
+{%- endmacro -%}
+
+<header>
+    <h1>{{ display_field(personal_info.name) }}</h1>
+    <p><strong>{{ display_field(personal_info.title) }}</strong></p>
+</header>
+
+<section id="contact">
+    <h2>Contact Information</h2>
+    <ul>
+        <li><strong>Email:</strong> {{ display_field(personal_info.email) }}</li>
+        <li><strong>Phone:</strong> {{ display_field(personal_info.phone) }}</li>
+        {%- for site in personal_info.websites -%}
+        <li><a href="{{ site.value }}" target="_blank">{{ site.value }}</a>
+            {{- display_field(site) -}}
+        </li>
+        {%- endfor -%}
+    </ul>
+</section>
+
+{%- if profile.summary -%}
+<section id="profile">
+    <h2>Profile</h2>
+    <p>{{ display_field(profile.summary) }}</p>
+    {%- if profile.expertise -%}
+        <h3>Key Expertise</h3>
+        <ul>
+        {%- for exp in profile.expertise -%}
+            <li>{{ display_field(exp) }}</li>
+        {%- endfor -%}
+        </ul>
+    {%- endif -%}
+</section>
+{%- endif -%}
+
+{%- if education -%}
+<section id="education">
+    <h2>Education</h2>
+    {%- for edu in education -%}
+        <h3>{{ display_field(edu.degree) }}{%- if edu.distinction and edu.distinction.value %} <em>({{ edu.distinction.value }})</em>{% endif %}</h3>
+        <p><strong>{{ display_field(edu.institution) }}</strong> | {{ display_field(edu.period) }}</p>
+        {%- if edu.description and edu.description.value -%}
+            <p>{{ display_field(edu.description) }}</p>
+        {%- endif -%}
+    {%- endfor -%}
+</section>
+{%- endif -%}
+
+{%- if work_experience -%}
+<section id="work_experience">
+    <h2>Work Experience</h2>
+    {%- for exp in work_experience -%}
+        <h3>{{ display_field(exp.position) }}</h3>
+        <p><strong>{{ display_field(exp.company) }}</strong> | {{ display_field(exp.period) }}</p>
+        {%- if exp.responsibilities -%}
+        <ul>
+            {%- for resp in exp.responsibilities -%}
+            <li>{{ display_field(resp) }}</li>
+            {%- endfor -%}
+        </ul>
+        {%- endif -%}
+    {%- endfor -%}
+</section>
+{%- endif -%}
+
+</body>
+</html>

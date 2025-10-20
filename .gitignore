@@ -13,18 +13,12 @@ ENV/
 .vscode/
 *.code-workspace
 
-# Generated CVs (optional - uncomment if you don't want to track them)
-# output/
-# *.md
-# *.html
-
-# OS
+# OS generated files
 .DS_Store
 Thumbs.db
 *.swp
 *.swo
 *~
-~$*.docx
 
 # Backup files
 *.bak
@@ -34,7 +28,23 @@ cv_data.json.bak
 # Logs
 *.log
 
-# Distribution
+# Distribution / packaging
 dist/
 build/
 *.egg-info/
+
+# Generated documents
+documents/
+
+# Intermediate data files
+cv_data_merged.json
+cv_data_from_linkedin.json
+cv_data_from_orcid.json
+
+# Other
+claude_guide_cv_manager.docx
+comprehensive_cv.html
+*2025*.html
+*2025*.md
+*2025*.txt
+Profile.pdf

@@ -1,0 +1,28 @@
+
+# Configuration for the CV Manager Pipeline
+
+data_sources:
+  original:
+    path: "cv_data.json"
+    priority: 1
+    confidence: 0.95
+  linkedin:
+    path: "cv_data_from_linkedin.json"
+    priority: 2
+    confidence: 0.7
+  orcid:
+    path: "cv_data_from_orcid.json"
+    priority: 3
+    confidence: 0.8
+
+output:
+  merged_data: "cv_data_merged.json"
+  comprehensive_cv_html: "documents/comprehensive_cv.html"
+
+merging_rules:
+  # Defines the conflict resolution strategy. 
+  # "primary_wins" - the original source always wins.
+  # "highest_confidence_wins" - the source with the higher confidence score wins.
+  strategy: "highest_confidence_wins"
+  list_matching_threshold: 0.8 # For future fuzzy matching
+

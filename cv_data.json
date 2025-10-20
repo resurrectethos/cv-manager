@@ -12,7 +12,7 @@
     "location": "Johannesburg, Gauteng, ZA"
   },
   "profile": {
-    "summary": "Dr. Pregalathan Reddy is a distinguished Digital Education Researcher and Strategist with a PhD in Information Technology and over 15 years of experience leading Technology-Enhanced Learning (TEL) initiatives in higher education.",
+    "summary": "Dr. Pregalathan Reddy is a Digital Education Researcher and Independent Contractor with a PhD in Information Technology. He possesses a proven track record of translating complex technical challenges into strategic solutions, including the recent full-stack development of the 'AI-Powered Citation Verifier,' a bespoke serverless application for AI literacy training.",
     "expertise": [
       "Pedagogical innovation and digital infrastructure",
       "ODeL environments",
@@ -60,6 +60,16 @@
   ],
   "work_experience": [
     {
+      "company": "Preggy Reddy Consulting (Independent Contractor)",
+      "position": "Client & Role: UNISA | VP Research - Academic Independent Contractor",
+      "period": "2023-Present",
+      "responsibilities": [
+        "Leading the design and delivery of a university-wide AI capacity development program across 10 catalytic niche areas.",
+        "Developed the \"AI-Powered Citation Verifier,\" a full-stack serverless application (React, Cloudflare, Node.js) as a core pedagogical tool for the program.",
+        "Authoring scholarly publications on \"Praxis-Based AI Pedagogy\" and design-based research in EdTech."
+      ]
+    },
+    {
       "company": "Durban University of Technology",
       "position": "eLearning Coordinator",
       "period": "2022-2025",
@@ -101,28 +111,41 @@
       ]
     }
   ],
-  "skills": {
-    "research": [
-      "Critical Realism",
-      "Case Study Analysis",
-      "Simulation Modeling",
+  "core_competencies": {
+    "strategic_pedagogical": [
+      "AI in Education Strategy (The Centaur Scholar Model)",
+      "Praxis-Based AI Pedagogy",
+      "Faculty Development & Training",
+      "ODeL Strategy"
+    ],
+    "technical_development": [
+      "Full-Stack Application Development (React, Node.js, Cloudflare)",
+      "LMS Architecture & Administration (Moodle)",
+      "Cloud & Serverless Deployment (Cloudflare, Azure)",
+      "API Integration & Security"
+    ],
+    "research_methodologies": [
+      "Design-Based Research",
+      "Critical Realism, Simulation Modeling",
       "Qualitative & Quantitative Data Analysis"
-    ],
-    "technical": [
-      "Moodle LMS Administration & Architecture",
-      "Cloud Platforms (Azure)",
-      "Database Management (SQL, MySQL)",
-      "Web Technologies (HTML, CSS, PHP)",
-      "Network & Server Administration (Linux/Windows)"
-    ],
-    "pedagogical": [
-      "AI in Education (The Centaur Scholar Model)",
-      "Online Course Design & Evaluation",
-      "ODeL Strategy",
-      "Digital Learning Pathways",
-      "Faculty Development & Training"
     ]
   },
+  "project_experience": [
+    {
+      "title": "AI-Powered Citation Verifier (Lead Developer)",
+      "description": [
+        "Designed, built, and deployed a full-stack, serverless web application to provide AI-driven citation analysis for academic users.",
+        "Architected a secure backend proxy using Cloudflare Workers to manage API requests, user authentication, and rate limiting.",
+        "Developed a responsive frontend using React and Vite, deployed via Cloudflare Pages with CI/CD."
+      ]
+    },
+    {
+      "title": "Moodle LMS Optimization (Lead Coordinator)",
+      "description": [
+        "Directed the technical strategy and optimization of a Moodle LMS serving over 35,000 users, ensuring 99.9% uptime, security, and scalability."
+      ]
+    }
+  ],
   "certifications": [
     {
       "name": "Fundamentals of Deep Learning",

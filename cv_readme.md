@@ -22,21 +22,19 @@ A comprehensive, JSON-based CV management system with advanced features includin
 ```
 cv-manager/
 ├── cv_data.json                    # Your CV data (single source)
-├── cv_generator.py                 # Core CV generation
-├── cv_cli.py                       # Basic CLI tool
 ├── cv_master.py                    # Master CLI (all features)
+├── cv_generator.py                 # Core CV generation
 ├── cv_pdf_generator.py             # PDF generation
 ├── cv_skills_matrix.py             # Skills visualizations
 ├── cv_publication_metrics.py       # Citation tracking
 ├── cv_cover_letter.py              # Cover letter generator
 ├── cv_application_tracker.py       # Application tracking
-├── requirements.txt                # Dependencies
+├── enhanced_requirements.txt       # Dependencies
 ├── README.md                       # This file
-├── output/                         # Generated files
-│   ├── pdf/                       # PDF CVs
-│   ├── skills/                    # Skill visualizations
-│   └── ...
-└── templates/                      # Custom templates
+├── documents/                      # Generated files (PDF, HTML, MD)
+└── templates/
+    ├── cv_template.html.jinja
+    └── style.css                   # Stylesheet for HTML CVs
 ```
 
 ## 🚀 Installation & Setup
@@ -64,7 +62,7 @@ venv\Scripts\activate
 source venv/bin/activate
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r enhanced_requirements.txt
 ```
 
 ### 3. VS Code Setup
@@ -86,7 +84,7 @@ code .
 2. Save `cv_data.json` with your information
 3. Make scripts executable (Mac/Linux):
    ```bash
-   chmod +x cv_master.py cv_cli.py
+   chmod +x cv_master.py
    ```
 
 ## 💻 Usage
@@ -96,88 +94,55 @@ code .
 The easiest way to use all features:
 
 ```bash
-python cv_master.py
+python cv_master.py -i
 ```
 
 This launches an interactive menu with all features:
 - CV generation (Markdown, HTML, PDF)
-- Skills visualizations
-- Publication metrics
-- Cover letter creation
-- Application tracking
+- And other features...
 
 ### Quick Commands
 
 ```bash
-# Generate all CV versions
-python cv_master.py --generate-all
+# Generate a research-focused CV in markdown format
+python cv_master.py generate -s research -f markdown
 
-# Update publication metrics
-python cv_master.py --update-metrics
+# Generate an industry-focused CV in html format with limited entries
+python cv_master.py generate -s industry -f html --limit-exp 3
 
-# Generate skills visualizations
-python cv_master.py --skills
-
-# Export everything
-python cv_master.py --export
+# Generate a technical CV in pdf format
+python cv_master.py generate -s technical -f pdf
 ```
 
 ## 📄 CV Generation
 
-### Markdown/HTML Generation
+### Markdown/HTML/PDF Generation
+
+Generation is handled via the master CLI.
 
 ```bash
 # Research-focused CV
-python cv_cli.py generate -s research -f markdown
+python cv_master.py generate -s research -f markdown
 
 # Industry CV (condensed)
-python cv_cli.py generate -s industry -f html --limit-exp 3
+python cv_master.py generate -s industry -f html --limit-exp 3
 
 # Custom sections only
-python cv_cli.py generate -s technical --sections "profile,skills,experience"
-```
+python cv_master.py generate -s technical --sections "profile,core_competencies,experience"
 
-### PDF Generation
-
-```bash
-# Generate single PDF
-python -c "from cv_generator import CVGenerator; from cv_pdf_generator import PDFGenerator; cv = CVGenerator(); pdf = PDFGenerator(cv); pdf.generate_pdf('cv.pdf', style='research')"
-
-# Or use master CLI
-python cv_master.py  # Then select option 2
+# PDF Generation
+python cv_master.py generate -s academic -f pdf
 ```
 
 ### CV Styles
 
 | Style | Best For | Features |
-|-------|----------|----------|
+|---|---|---|
+| **Hybrid** | Independent Contractor | Balanced strategic and technical focus. **(New Default)** |
 | **Research** | Academic positions, grants | Full publications, research emphasis |
 | **Industry** | Tech companies, startups | Technical skills first, condensed |
 | **Academic** | University positions | Comprehensive, teaching focus |
-| **Technical** | IT/Software roles | Skills prominent, project-focused |
-
-## 📊 Skills Visualization
-
-Generate professional visualizations of your skills:
-
-```bash
-python cv_skills_matrix.py
-```
-
-Generates:
-- Horizontal bar charts (by category and overall)
-- Radar chart (category comparison)
-- Heatmap (skills matrix)
-
-**Customizing Skill Levels:**
-
-Edit `cv_skills_matrix.py`:
-
-```python
-skills = SkillsMatrix(cv)
-skills.update_skill_level("Python", 5)  # 1-5 scale
-skills.generate_all_visualizations()
-```
+| **Technical** | IT/Software roles | Skills prominent, project-focused, reordered sections |
 
 ## 📈 Publication Metrics
 

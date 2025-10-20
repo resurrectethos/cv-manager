@@ -8,7 +8,22 @@ import markdown2
 from weasyprint import HTML, CSS
 from pathlib import Path
 from cv_generator import CVGenerator
+import os
+from datetime import datetime
 
+def get_versioned_filename(output_dir, style, format):
+    date_str = datetime.now().strftime('%Y%m%d')
+    base_filename = f"cv_{style}_{date_str}"
+    extension = format
+    
+    version = 1
+    output_file = os.path.join(output_dir, f"{base_filename}.{extension}")
+    
+    while os.path.exists(output_file):
+        version += 1
+        output_file = os.path.join(output_dir, f"{base_filename}_v{version}.{extension}")
+        
+    return output_file
 
 class PDFGenerator:
     """Generate professional PDF CVs with custom styling."""
@@ -191,7 +206,7 @@ class PDFGenerator:
         print(f"✓ PDF generated: {output_file}")
         return output_file
     
-    def generate_all_versions(self, output_dir: str = "output/pdf"):
+    def generate_all_versions(self, output_dir: str = "documents"):
         """Generate PDF versions for all CV styles."""
         Path(output_dir).mkdir(parents=True, exist_ok=True)
         
@@ -199,12 +214,12 @@ class PDFGenerator:
             ("research", "academic", {}),
             ("industry", "professional", {"experience_limit": 3, "publications_limit": 5}),
             ("academic", "academic", {}),
-            ("technical", "professional", {"sections": "profile,skills,experience,certifications"}),
+            ("technical", "professional", {"sections": "profile,core_competencies,experience,certifications"}),
         ]
         
         generated = []
         for cv_style, pdf_style, kwargs in versions:
-            output_file = f"{output_dir}/cv_{cv_style}.pdf"
+            output_file = get_versioned_filename(output_dir, cv_style, "pdf")
             self.generate_pdf(output_file, style=cv_style, pdf_style=pdf_style, **kwargs)
             generated.append(output_file)
         

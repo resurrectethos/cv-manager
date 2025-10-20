@@ -1,114 +1,151 @@
-
 import json
 import copy
+import yaml
+from datetime import datetime, timezone
+from thefuzz import fuzz
 
-# Define file paths
-ORIGINAL_PATH = "cv_data.json"
-LINKEDIN_PATH = "cv_data_from_linkedin.json"
-ORCID_PATH = "cv_data_from_orcid.json"
-OUTPUT_PATH = "cv_data_merged.json"
+def load_config(config_path='config.yaml'):
+    """Loads the YAML configuration file."""
+    with open(config_path, 'r') as f:
+        return yaml.safe_load(f)
 
-def transform_to_merged_format(data, source_name):
-    """Recursively transforms a simple JSON object into the new merged format."""
+def transform_to_merged_format(data, source_name, confidence):
+    """Recursively transforms a simple JSON object into the new, rich merged format."""
+    timestamp = datetime.now(timezone.utc).isoformat()
     if isinstance(data, dict):
-        new_dict = {}
-        for k, v in data.items():
-            new_dict[k] = transform_to_merged_format(v, source_name)
-        return new_dict
+        return {k: transform_to_merged_format(v, source_name, confidence) for k, v in data.items()}
     elif isinstance(data, list):
-        return [transform_to_merged_format(item, source_name) for item in data]
+        return [transform_to_merged_format(item, source_name, confidence) for item in data]
     else:
-        return {"value": data, "source": source_name, "conflicts": []}
+        return {
+            "value": data,
+            "source": source_name,
+            "timestamp": timestamp,
+            "confidence": confidence,
+            "conflicts": []
+        }
 
-def get_item_key(item, item_type):
-    """Creates a unique key for an item in a list, handling both simple and merged formats."""
+def get_comparison_string(item, item_type):
+    """Creates a representative string for an item for fuzzy matching."""
     if not isinstance(item, dict):
         return str(item)
+    
+    key_fields = {
+        'work_experience': ['company', 'position'],
+        'education': ['institution', 'degree']
+    }
+    if item_type not in key_fields:
+        return str(item)
 
-    if item_type == 'work_experience':
-        company_val = item.get('company', '')
-        company = company_val.get('value') if isinstance(company_val, dict) else company_val
-        position_val = item.get('position', '')
-        position = position_val.get('value') if isinstance(position_val, dict) else position_val
-        return f"{company}_{position}".lower()
+    parts = []
+    for field in key_fields[item_type]:
+        val = item.get(field, '')
+        part = val.get('value') if isinstance(val, dict) else val
+        parts.append(str(part))
+    
+    return " ".join(parts).lower()
 
-    if item_type == 'education':
-        institution_val = item.get('institution', '')
-        institution = institution_val.get('value') if isinstance(institution_val, dict) else institution_val
-        degree_val = item.get('degree', '')
-        degree = degree_val.get('value') if isinstance(degree_val, dict) else degree_val
-        return f"{institution}_{degree}".lower()
+def merge_sources(merged_data, new_data, source_name, config):
+    """Recursively merges a new data source, using fuzzy matching for lists."""
+    strategy = config['merging_rules']['strategy']
+    new_confidence = config['data_sources'][source_name]['confidence']
+    threshold = config['merging_rules']['list_matching_threshold'] * 100
 
-    return str(item) # Fallback
-
-def merge_sources(merged_data, new_data, source_name):
-    """Recursively merges a new data source into the merged_data structure."""
     for key, new_value in new_data.items():
         if key not in merged_data:
-            # New key, simply add it after transforming
-            merged_data[key] = transform_to_merged_format(new_value, source_name)
+            merged_data[key] = transform_to_merged_format(new_value, source_name, new_confidence)
             continue
 
-        merged_value = merged_data[key]
+        merged_node = merged_data[key]
+        if isinstance(new_value, dict) and isinstance(merged_node, dict):
+            merge_sources(merged_node, new_value, source_name, config)
+        elif isinstance(new_value, list) and isinstance(merged_node, list):
+            # --- Fuzzy Matching Logic for Lists ---
+            unmatched_new_items = []
+            for new_item in new_value:
+                best_match_score = 0
+                best_match_node = None
+                new_item_str = get_comparison_string(new_item, key)
 
-        if isinstance(new_value, dict) and isinstance(merged_value, dict):
-            # Recurse into dictionaries
-            merge_sources(merged_value, new_value, source_name)
-        elif isinstance(new_value, list) and isinstance(merged_value, list):
-            # Handle list merging (the complex part)
-            merged_items_map = {get_item_key(item, key): item for item in merged_value}
-            for item in new_value:
-                item_key = get_item_key(item, key)
-                if item_key in merged_items_map:
-                    # Existing item, merge it recursively
-                    merge_sources(merged_items_map[item_key], item, source_name)
+                for existing_item in merged_node:
+                    existing_item_str = get_comparison_string(existing_item, key)
+                    score = fuzz.ratio(new_item_str, existing_item_str)
+                    if score > best_match_score:
+                        best_match_score = score
+                        best_match_node = existing_item
+
+                if best_match_node and best_match_score >= threshold:
+                    # Found a confident match, merge this item recursively
+                    if isinstance(new_item, dict):
+                         merge_sources(best_match_node, new_item, source_name, config)
                 else:
-                    # New item, add to the list
-                    merged_value.append(transform_to_merged_format(item, source_name))
-        elif isinstance(merged_value, dict) and 'value' in merged_value:
-            # This is a leaf node in our merged structure
-            if merged_value['value'] != new_value:
-                # Conflict detected!
-                is_duplicate_conflict = any(
-                    c['value'] == new_value and c['source'] == source_name 
-                    for c in merged_value['conflicts']
-                )
-                if not is_duplicate_conflict:
-                    merged_value['conflicts'].append({"value": new_value, "source": source_name})
+                    # No confident match found, add to a temporary list
+                    unmatched_new_items.append(new_item)
+            
+            # Add all unmatched new items to the merged list
+            for item in unmatched_new_items:
+                merged_node.append(transform_to_merged_format(item, source_name, new_confidence))
+
+        elif isinstance(merged_node, dict) and 'value' in merged_node:
+            if merged_node['value'] == new_value:
+                continue # No conflict
+
+            # --- Conflict Resolution Logic ---
+            if strategy == 'highest_confidence_wins':
+                current_confidence = merged_node.get('confidence', 0)
+                if new_confidence > current_confidence:
+                    old_winner = copy.deepcopy(merged_node)
+                    del old_winner['conflicts']
+                    merged_node['conflicts'].append(old_winner)
+                    
+                    merged_node.update({
+                        'value': new_value,
+                        'source': source_name,
+                        'timestamp': datetime.now(timezone.utc).isoformat(),
+                        'confidence': new_confidence
+                    })
+                else:
+                    merged_node['conflicts'].append({
+                        "value": new_value,
+                        "source": source_name,
+                        "timestamp": datetime.now(timezone.utc).isoformat(),
+                        "confidence": new_confidence
+                    })
+            else: # Default to 'primary_wins'
+                merged_node['conflicts'].append(transform_to_merged_format(new_value, source_name, new_confidence))
 
 def main():
-    """Main function to load, merge, and save the data."""
-    print("Starting data merge...")
-    # Load all data sources
+    config = load_config()
+    sources = sorted(config['data_sources'].items(), key=lambda item: item[1]['priority'])
+    
+    primary_source_name, primary_config = sources[0]
+    print(f"Loading primary source: {primary_source_name}...")
     try:
-        with open(ORIGINAL_PATH, 'r') as f:
-            original_data = json.load(f)
-        with open(LINKEDIN_PATH, 'r') as f:
-            linkedin_data = json.load(f)
-        with open(ORCID_PATH, 'r') as f:
-            orcid_data = json.load(f)
+        with open(primary_config['path'], 'r') as f:
+            primary_data = json.load(f)
     except FileNotFoundError as e:
-        print(f"Error: Could not find a source file. {e}")
+        print(f"Error: Primary source file not found. {e}")
         return
 
-    # 1. Transform the original data to be the base of our merged structure
-    print("Transforming original data as the baseline...")
-    merged_data = transform_to_merged_format(original_data, "original")
+    print("Transforming primary data as the baseline...")
+    merged_data = transform_to_merged_format(primary_data, primary_source_name, primary_config['confidence'])
 
-    # 2. Merge in LinkedIn data
-    print("Merging data from LinkedIn...")
-    merge_sources(merged_data, linkedin_data, "linkedin")
+    for source_name, source_config in sources[1:]:
+        print(f"Merging data from {source_name}...")
+        try:
+            with open(source_config['path'], 'r') as f:
+                new_data = json.load(f)
+            merge_sources(merged_data, new_data, source_name, config)
+        except FileNotFoundError:
+            print(f"Warning: Source file not found for '{source_name}'. Skipping.")
+            continue
 
-    # 3. Merge in ORCID data
-    print("Merging data from ORCID...")
-    merge_sources(merged_data, orcid_data, "orcid")
-
-    # 4. Save the final merged file
-    print(f"Saving merged data to {OUTPUT_PATH}...")
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
+    output_path = config['output']['merged_data']
+    print(f"Saving merged data to {output_path}...")
+    with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(merged_data, f, indent=4, ensure_ascii=False)
     
-    print("Merge complete.")
+    print("Fuzzy merge complete.")
 
 if __name__ == "__main__":
     main()
